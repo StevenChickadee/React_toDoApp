@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+:root {
+  --backgroundColor: #374151;
+  --inputColor: #1F2937;
+  --entityColor: #111827;
+  --uneditableTextColor: #6B7280;
+  --editableTextColor: #EEE;
+  --pink: #EC4899;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*ID selectors*/
+/*Removes default browser styling*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Body*/
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  background-color: var(--backgroundColor);
 }
 
-.App-link {
-  color: #61dafb;
+/*Header*/
+header {
+  padding: 1.5rem;
+  font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#header_text {
+  display: flex;
+  justify-content: center;
+  color: var(--uneditableTextColor);
+}
+
+/*Main content*/
+#inputSection {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+#inputSection_textBox,
+#inputSection_submitButton {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background: var(--inputColor);
+}
+
+#inputSection_textBox {
+  color: var(--editableTextColor);
+}
+
+#inputSection_textBox::placeholder {
+  color: var(--uneditableTextColor);
+}
+
+#inputSection_submitButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--inputColor);
+  background: var(--pink);
+}
+
+#inputSection_submitButton:hover {
+  color: var(--pink);
+  background: var(--inputColor);
+}
+
+#inputSection_submitButton:active {
+  opacity: 0.6;
+}
+
+#listSection {
+  list-style-type: none;
+  min-width: 30%;
+  padding: 1rem;
+}
+
+/*Classes*/
+#listSection .listSection_listEntity {
+  display: flex;
+  justify-content: center;
+}
+
+#listSection .listSection_listEntity_form {
+  margin: 0.2rem;
+}
+
+#listSection .listSection_listEntity_text,
+#listSection .listSection_listEntity_editButton,
+#listSection .listSection_listEntity_deleteButton {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background: var(--inputColor);
+}
+
+#listSection .listSection_listEntity_text {
+  color: var(--editableTextColor);
+}
+
+#listSection .listSection_listEntity_editButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--inputColor);
+  background: var(--pink);
+}
+
+#listSection .listSection_listEntity_editButton:hover {
+  color: var(--pink);
+  background: var(--inputColor);
+}
+
+#listSection .listSection_listEntity_editButton:active {
+  opacity: 0.6;
+}
+
+#listSection .listSection_listEntity_deleteButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--inputColor);
+  background: var(--pink);
+}
+
+#listSection .listSection_listEntity_deleteButton:hover {
+  color: var(--pink);
+  background: var(--inputColor);
+}
+
+#listSection .listSection_listEntity_deleteButton:active {
+  opacity: 0.6;
 }
